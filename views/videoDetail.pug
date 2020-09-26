@@ -1,0 +1,10 @@
+extends layouts/main.pug
+
+block content
+    .form-container
+        form(action=`/videos${routes.videoDetail}`, method="post", enctype="multipart/form-data")
+            input(type="title", placeholder="Title", name="title", required=true)
+            textarea(placeholder="Description", name="description", required=true)
+            input(type="submit", value="Update Video")
+    a(href=routes.deleteVideo) 
+        span Delete Video

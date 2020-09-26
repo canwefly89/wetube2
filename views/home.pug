@@ -1,0 +1,15 @@
+extends layouts/main.pug
+include mixins/videoBlock
+
+block content
+    .videos
+        //- pug의 iteration
+        each item in videos
+            //- tag + = + Javascript 변수명
+            //- 어떻게 인식하는거지?
+            +videoBlock({
+                videoFile: item.videoFile,
+                title: item.title,                
+                views: item.views,
+                id: item.id
+            })
